@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_static_wysiwygs",
+  "info": {
+    "displayName": "wysiwyg",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

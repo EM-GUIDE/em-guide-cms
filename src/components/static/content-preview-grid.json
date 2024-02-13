@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_static_content_preview_grids",
+  "info": {
+    "displayName": "Content Preview Grid",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "contentPreviewItem": {
+      "displayName": "Content Preview Item",
+      "type": "component",
+      "repeatable": false,
+      "component": "static.content-preview-item"
+    }
+  }
+}

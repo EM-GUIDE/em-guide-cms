@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_static_featured_contents",
+  "info": {
+    "displayName": "featured Content",
+    "icon": "star",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "button": {
+      "displayName": "button",
+      "type": "component",
+      "repeatable": false,
+      "component": "static.button"
+    }
+  }
+}

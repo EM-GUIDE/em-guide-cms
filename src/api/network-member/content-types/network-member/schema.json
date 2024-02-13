@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "network_members",
+  "info": {
+    "singularName": "network-member",
+    "pluralName": "network-members",
+    "displayName": "NetworkMember",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "rank": {
+      "type": "integer"
+    }
+  }
+}

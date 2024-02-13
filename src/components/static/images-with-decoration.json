@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_static_images_with_decorations",
+  "info": {
+    "displayName": "Images With Decoration",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

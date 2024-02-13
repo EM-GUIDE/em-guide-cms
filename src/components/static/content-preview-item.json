@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_static_content_preview_items",
+  "info": {
+    "displayName": "Content Preview Item",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
