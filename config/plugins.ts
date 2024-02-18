@@ -10,5 +10,10 @@ module.exports = ({ env }) => ({
     config: {
       regenerateOnUpdate: true
     }
-  }
+  },
+  'strapi-plugin-populate-deep': {
+    config: {
+      defaultDepth: 5
+    }
+  },
 })
