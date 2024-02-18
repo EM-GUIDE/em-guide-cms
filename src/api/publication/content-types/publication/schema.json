@@ -46,7 +46,8 @@
     "content": {
       "type": "dynamiczone",
       "components": [
-        "static.wysiwyg"
+        "static.wysiwyg",
+        "static.images-with-decoration"
       ]
     }
   }

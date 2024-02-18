@@ -84,7 +84,13 @@ export interface StaticWysiwyg extends Schema.Component {
     description: '';
   };
   attributes: {
-    content: Attribute.RichText;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
   };
 }
 
