@@ -5,7 +5,7 @@ server {
 
     location ~ /.well-known/acme-challenge {
             allow all;
-            root /var/www/html;0a0f84a6-9e3b-475c-87e2-414ddf23e5d1
+            root /var/www/html;
     }
 
     # Redirect HTTP to HTTPS
