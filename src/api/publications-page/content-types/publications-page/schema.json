@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "publications_pages",
+  "info": {
+    "singularName": "publications-page",
+    "pluralName": "publications-pages",
+    "displayName": "Publications Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "featuredTags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "static.seo"
+    }
+  }
+}

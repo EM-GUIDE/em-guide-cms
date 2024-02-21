@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_pages",
+  "info": {
+    "singularName": "news-page",
+    "pluralName": "news-pages",
+    "displayName": "News Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "featuredTags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "static.seo"
+    }
+  }
+}

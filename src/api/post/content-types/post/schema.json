@@ -24,6 +24,27 @@
     },
     "excerpt": {
       "type": "richtext"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::network-member.network-member",
+      "inversedBy": "posts"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "static.wysiwyg",
+        "static.images-with-decoration"
+      ]
     }
   }
 }

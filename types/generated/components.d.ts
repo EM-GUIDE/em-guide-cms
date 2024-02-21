@@ -76,6 +76,26 @@ export interface StaticImagesWithDecoration extends Schema.Component {
   };
 }
 
+export interface StaticSeo extends Schema.Component {
+  collectionName: 'components_static_seos';
+  info: {
+    displayName: 'Seo';
+    icon: 'globe';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    canonical: Attribute.String;
+    ogTitle: Attribute.String;
+    ogDescription: Attribute.Text;
+    ogImage: Attribute.Media;
+    twitterTitle: Attribute.String;
+    twitterDescription: Attribute.Text;
+    twitterImage: Attribute.Media;
+  };
+}
+
 export interface StaticWysiwyg extends Schema.Component {
   collectionName: 'components_static_wysiwygs';
   info: {
@@ -103,6 +123,7 @@ declare module '@strapi/types' {
       'static.content-preview-item': StaticContentPreviewItem;
       'static.featured-content': StaticFeaturedContent;
       'static.images-with-decoration': StaticImagesWithDecoration;
+      'static.seo': StaticSeo;
       'static.wysiwyg': StaticWysiwyg;
     }
   }

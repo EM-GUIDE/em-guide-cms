@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_static_seos",
+  "info": {
+    "displayName": "Seo",
+    "icon": "globe",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "canonical": {
+      "type": "string"
+    },
+    "ogTitle": {
+      "type": "string"
+    },
+    "ogDescription": {
+      "type": "text"
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "twitterTitle": {
+      "type": "string"
+    },
+    "twitterDescription": {
+      "type": "text"
+    },
+    "twitterImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

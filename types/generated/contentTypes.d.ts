@@ -784,6 +784,43 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
+  collectionName: 'about_us_pages';
+  info: {
+    singularName: 'about-us-page';
+    pluralName: 'about-us-pages';
+    displayName: 'About Us Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    conent: Attribute.DynamicZone<
+      [
+        'static.featured-content',
+        'static.wysiwyg',
+        'static.images-with-decoration'
+      ]
+    >;
+    seo: Attribute.Component<'static.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us-page.about-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us-page.about-us-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -806,6 +843,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
         'static.content-preview-grid'
       ]
     >;
+    seo: Attribute.Component<'static.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -841,6 +879,11 @@ export interface ApiNetworkMemberNetworkMember extends Schema.CollectionType {
     description: Attribute.RichText;
     logo: Attribute.Media;
     rank: Attribute.Integer;
+    posts: Attribute.Relation<
+      'api::network-member.network-member',
+      'manyToMany',
+      'api::post.post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -851,6 +894,41 @@ export interface ApiNetworkMemberNetworkMember extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::network-member.network-member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsPageNewsPage extends Schema.SingleType {
+  collectionName: 'news_pages';
+  info: {
+    singularName: 'news-page';
+    pluralName: 'news-pages';
+    displayName: 'News Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    featuredTags: Attribute.Relation<
+      'api::news-page.news-page',
+      'oneToMany',
+      'api::tag.tag'
+    >;
+    seo: Attribute.Component<'static.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::news-page.news-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::news-page.news-page',
       'oneToOne',
       'admin::user'
     > &
@@ -873,6 +951,15 @@ export interface ApiPostPost extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::post.post', 'title'> & Attribute.Required;
     excerpt: Attribute.RichText;
+    tags: Attribute.Relation<
+      'api::post.post',
+      'manyToMany',
+      'api::network-member.network-member'
+    >;
+    featuredImage: Attribute.Media;
+    content: Attribute.DynamicZone<
+      ['static.wysiwyg', 'static.images-with-decoration']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -931,6 +1018,41 @@ export interface ApiPublicationPublication extends Schema.CollectionType {
   };
 }
 
+export interface ApiPublicationsPagePublicationsPage extends Schema.SingleType {
+  collectionName: 'publications_pages';
+  info: {
+    singularName: 'publications-page';
+    pluralName: 'publications-pages';
+    displayName: 'Publications Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    featuredTags: Attribute.Relation<
+      'api::publications-page.publications-page',
+      'oneToMany',
+      'api::tag.tag'
+    >;
+    seo: Attribute.Component<'static.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::publications-page.publications-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::publications-page.publications-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -977,10 +1099,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::network-member.network-member': ApiNetworkMemberNetworkMember;
+      'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::post.post': ApiPostPost;
       'api::publication.publication': ApiPublicationPublication;
+      'api::publications-page.publications-page': ApiPublicationsPagePublicationsPage;
       'api::tag.tag': ApiTagTag;
     }
   }
