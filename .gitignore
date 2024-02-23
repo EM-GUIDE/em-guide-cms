@@ -111,9 +111,13 @@ coverage
 .env
 license.txt
 exports
-.cache
-build
+*.cache
 dist
+build
+documentation
+.strapi-updater.json
+types/generated
+.strapi
 
 ############################
 # nginx
