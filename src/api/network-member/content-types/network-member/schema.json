@@ -37,12 +37,6 @@
     },
     "rank": {
       "type": "integer"
-    },
-    "posts": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::post.post",
-      "mappedBy": "tags"
     }
   }
 }

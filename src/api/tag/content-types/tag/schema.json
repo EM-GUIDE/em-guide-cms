@@ -26,6 +26,12 @@
       "relation": "manyToMany",
       "target": "api::publication.publication",
       "inversedBy": "tags"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "mappedBy": "tags"
     }
   }
 }

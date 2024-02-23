@@ -879,11 +879,6 @@ export interface ApiNetworkMemberNetworkMember extends Schema.CollectionType {
     description: Attribute.RichText;
     logo: Attribute.Media;
     rank: Attribute.Integer;
-    posts: Attribute.Relation<
-      'api::network-member.network-member',
-      'manyToMany',
-      'api::post.post'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -951,15 +946,11 @@ export interface ApiPostPost extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::post.post', 'title'> & Attribute.Required;
     excerpt: Attribute.RichText;
-    tags: Attribute.Relation<
-      'api::post.post',
-      'manyToMany',
-      'api::network-member.network-member'
-    >;
     featuredImage: Attribute.Media;
     content: Attribute.DynamicZone<
       ['static.wysiwyg', 'static.images-with-decoration']
     >;
+    tags: Attribute.Relation<'api::post.post', 'manyToMany', 'api::tag.tag'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1072,6 +1063,7 @@ export interface ApiTagTag extends Schema.CollectionType {
       'manyToMany',
       'api::publication.publication'
     >;
+    posts: Attribute.Relation<'api::tag.tag', 'manyToMany', 'api::post.post'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
