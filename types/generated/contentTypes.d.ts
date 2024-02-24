@@ -961,6 +961,42 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
 }
 
+export interface ApiPrivacyPolicyPagePrivacyPolicyPage
+  extends Schema.SingleType {
+  collectionName: 'privacy_policy_pages';
+  info: {
+    singularName: 'privacy-policy-page';
+    pluralName: 'privacy-policy-pages';
+    displayName: 'PrivacyPolicyPage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    wysiwyg: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy-page.privacy-policy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy-page.privacy-policy-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPublicationPublication extends Schema.CollectionType {
   collectionName: 'publications';
   info: {
@@ -1096,6 +1132,7 @@ declare module '@strapi/types' {
       'api::network-member.network-member': ApiNetworkMemberNetworkMember;
       'api::news-page.news-page': ApiNewsPageNewsPage;
       'api::post.post': ApiPostPost;
+      'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::publication.publication': ApiPublicationPublication;
       'api::publications-page.publications-page': ApiPublicationsPagePublicationsPage;
       'api::tag.tag': ApiTagTag;

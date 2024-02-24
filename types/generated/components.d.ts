@@ -31,9 +31,13 @@ export interface StaticContentPreviewGrid extends Schema.Component {
   info: {
     displayName: 'Content Preview Grid';
     icon: 'grid';
+    description: '';
   };
   attributes: {
-    contentPreviewItem: Attribute.Component<'static.content-preview-item'>;
+    contentPreviewItem: Attribute.Component<
+      'static.content-preview-item',
+      true
+    >;
   };
 }
 
