@@ -91,9 +91,9 @@ export interface StaticSeo extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     canonical: Attribute.String;
-    ogTitle: Attribute.String;
+    ogTitle: Attribute.String & Attribute.Required;
     ogDescription: Attribute.Text;
-    ogImage: Attribute.Media;
+    ogImage: Attribute.Media & Attribute.Required;
     twitterTitle: Attribute.String;
     twitterDescription: Attribute.Text;
     twitterImage: Attribute.Media;

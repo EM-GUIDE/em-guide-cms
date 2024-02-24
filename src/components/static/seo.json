@@ -19,7 +19,8 @@
       "type": "string"
     },
     "ogTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "ogDescription": {
       "type": "text"
@@ -27,7 +28,7 @@
     "ogImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -39,11 +40,12 @@
       "type": "text"
     },
     "twitterImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
