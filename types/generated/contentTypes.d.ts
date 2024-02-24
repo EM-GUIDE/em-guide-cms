@@ -968,18 +968,20 @@ export interface ApiPrivacyPolicyPagePrivacyPolicyPage
     singularName: 'privacy-policy-page';
     pluralName: 'privacy-policy-pages';
     displayName: 'PrivacyPolicyPage';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    wysiwyg: Attribute.RichText &
+    content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
           preset: 'toolbar';
         }
       >;
+    seo: Attribute.Component<'static.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

@@ -4,19 +4,25 @@
   "info": {
     "singularName": "privacy-policy-page",
     "pluralName": "privacy-policy-pages",
-    "displayName": "PrivacyPolicyPage"
+    "displayName": "PrivacyPolicyPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "wysiwyg": {
+    "content": {
       "type": "customField",
       "options": {
         "preset": "toolbar"
       },
       "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "static.seo"
     }
   }
 }
