@@ -877,9 +877,15 @@ export interface ApiNetworkMemberNetworkMember extends Schema.CollectionType {
     name: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::network-member.network-member', 'name'> &
       Attribute.Required;
-    description: Attribute.RichText;
     logo: Attribute.Media;
     rank: Attribute.Integer;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1026,11 +1032,6 @@ export interface ApiPublicationPublication extends Schema.CollectionType {
       'api::tag.tag'
     >;
     featuredImage: Attribute.Media;
-    featuredTag: Attribute.Relation<
-      'api::publication.publication',
-      'oneToOne',
-      'api::tag.tag'
-    >;
     content: Attribute.DynamicZone<
       [
         'static.wysiwyg',

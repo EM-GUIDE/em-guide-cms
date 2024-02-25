@@ -38,11 +38,6 @@
         "images"
       ]
     },
-    "featuredTag": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::tag.tag"
-    },
     "content": {
       "type": "dynamiczone",
       "components": [
