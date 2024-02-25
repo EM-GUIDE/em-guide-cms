@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_interactive_slides",
+  "info": {
+    "displayName": "Slide",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "text": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

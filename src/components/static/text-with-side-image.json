@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_static_text_with_side_images",
+  "info": {
+    "displayName": "Text With Side Image",
+    "icon": "dashboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

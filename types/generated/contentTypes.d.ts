@@ -796,11 +796,13 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    conent: Attribute.DynamicZone<
+    content: Attribute.DynamicZone<
       [
         'static.featured-content',
         'static.wysiwyg',
-        'static.images-with-decoration'
+        'static.images-with-decoration',
+        'interactive.slider',
+        'static.text-with-side-image'
       ]
     >;
     seo: Attribute.Component<'static.seo'>;
@@ -833,14 +835,13 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    slide: Attribute.Component<'interactive.carousel', true> &
-      Attribute.Required;
-    featuredContent: Attribute.Component<'static.featured-content'>;
     content: Attribute.DynamicZone<
       [
-        'interactive.carousel',
         'static.featured-content',
-        'static.content-preview-grid'
+        'static.content-preview-grid',
+        'interactive.slider',
+        'static.images-with-decoration',
+        'static.text-with-side-image'
       ]
     >;
     seo: Attribute.Component<'static.seo'>;
@@ -948,7 +949,11 @@ export interface ApiPostPost extends Schema.CollectionType {
     excerpt: Attribute.RichText;
     featuredImage: Attribute.Media;
     content: Attribute.DynamicZone<
-      ['static.wysiwyg', 'static.images-with-decoration']
+      [
+        'static.wysiwyg',
+        'static.images-with-decoration',
+        'static.text-with-side-image'
+      ]
     >;
     tags: Attribute.Relation<'api::post.post', 'manyToMany', 'api::tag.tag'>;
     createdAt: Attribute.DateTime;
@@ -1027,7 +1032,11 @@ export interface ApiPublicationPublication extends Schema.CollectionType {
       'api::tag.tag'
     >;
     content: Attribute.DynamicZone<
-      ['static.wysiwyg', 'static.images-with-decoration']
+      [
+        'static.wysiwyg',
+        'static.images-with-decoration',
+        'static.text-with-side-image'
+      ]
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

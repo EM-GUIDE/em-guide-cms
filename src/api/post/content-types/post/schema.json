@@ -37,7 +37,8 @@
       "type": "dynamiczone",
       "components": [
         "static.wysiwyg",
-        "static.images-with-decoration"
+        "static.images-with-decoration",
+        "static.text-with-side-image"
       ]
     },
     "tags": {

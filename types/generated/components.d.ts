@@ -14,6 +14,31 @@ export interface InteractiveCarousel extends Schema.Component {
   };
 }
 
+export interface InteractiveSlide extends Schema.Component {
+  collectionName: 'components_interactive_slides';
+  info: {
+    displayName: 'Slide';
+    icon: 'layout';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    text: Attribute.String;
+    url: Attribute.String;
+  };
+}
+
+export interface InteractiveSlider extends Schema.Component {
+  collectionName: 'components_interactive_sliders';
+  info: {
+    displayName: 'Slider';
+    icon: 'stack';
+    description: '';
+  };
+  attributes: {
+    slides: Attribute.Component<'interactive.slide', true>;
+  };
+}
+
 export interface StaticButton extends Schema.Component {
   collectionName: 'components_static_buttons';
   info: {
@@ -57,7 +82,7 @@ export interface StaticContentPreviewItem extends Schema.Component {
 export interface StaticFeaturedContent extends Schema.Component {
   collectionName: 'components_static_featured_contents';
   info: {
-    displayName: 'featured Content';
+    displayName: 'Featured Content';
     icon: 'star';
     description: '';
   };
@@ -100,10 +125,23 @@ export interface StaticSeo extends Schema.Component {
   };
 }
 
+export interface StaticTextWithSideImage extends Schema.Component {
+  collectionName: 'components_static_text_with_side_images';
+  info: {
+    displayName: 'Text With Side Image';
+    icon: 'dashboard';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    text: Attribute.RichText & Attribute.Required;
+  };
+}
+
 export interface StaticWysiwyg extends Schema.Component {
   collectionName: 'components_static_wysiwygs';
   info: {
-    displayName: 'wysiwyg';
+    displayName: 'Wysiwyg';
     icon: 'file';
     description: '';
   };
@@ -122,12 +160,15 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'interactive.carousel': InteractiveCarousel;
+      'interactive.slide': InteractiveSlide;
+      'interactive.slider': InteractiveSlider;
       'static.button': StaticButton;
       'static.content-preview-grid': StaticContentPreviewGrid;
       'static.content-preview-item': StaticContentPreviewItem;
       'static.featured-content': StaticFeaturedContent;
       'static.images-with-decoration': StaticImagesWithDecoration;
       'static.seo': StaticSeo;
+      'static.text-with-side-image': StaticTextWithSideImage;
       'static.wysiwyg': StaticWysiwyg;
     }
   }

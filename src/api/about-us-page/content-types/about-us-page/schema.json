@@ -12,12 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "conent": {
+    "content": {
       "type": "dynamiczone",
       "components": [
         "static.featured-content",
         "static.wysiwyg",
-        "static.images-with-decoration"
+        "static.images-with-decoration",
+        "interactive.slider",
+        "static.text-with-side-image"
       ]
     },
     "seo": {

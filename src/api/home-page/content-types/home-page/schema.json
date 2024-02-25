@@ -12,24 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "slide": {
-      "displayName": "carousel",
-      "type": "component",
-      "repeatable": true,
-      "component": "interactive.carousel",
-      "required": true
-    },
-    "featuredContent": {
-      "type": "component",
-      "repeatable": false,
-      "component": "static.featured-content"
-    },
     "content": {
       "type": "dynamiczone",
       "components": [
-        "interactive.carousel",
         "static.featured-content",
-        "static.content-preview-grid"
+        "static.content-preview-grid",
+        "interactive.slider",
+        "static.images-with-decoration",
+        "static.text-with-side-image"
       ]
     },
     "seo": {

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_interactive_sliders",
+  "info": {
+    "displayName": "Slider",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "displayName": "Slide",
+      "type": "component",
+      "repeatable": true,
+      "component": "interactive.slide"
+    }
+  }
+}
