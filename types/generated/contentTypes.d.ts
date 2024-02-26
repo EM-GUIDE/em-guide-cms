@@ -886,6 +886,7 @@ export interface ApiNetworkMemberNetworkMember extends Schema.CollectionType {
           preset: 'toolbar';
         }
       >;
+    url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
