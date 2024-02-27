@@ -45,6 +45,11 @@
         "static.images-with-decoration",
         "static.text-with-side-image"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "static.seo"
     }
   }
 }

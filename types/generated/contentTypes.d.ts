@@ -963,6 +963,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       ]
     >;
     tags: Attribute.Relation<'api::post.post', 'manyToMany', 'api::tag.tag'>;
+    seo: Attribute.Component<'static.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1040,6 +1041,7 @@ export interface ApiPublicationPublication extends Schema.CollectionType {
         'static.text-with-side-image'
       ]
     >;
+    seo: Attribute.Component<'static.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
