@@ -1,19 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface InteractiveCarousel extends Schema.Component {
-  collectionName: 'components_interactive_carousels';
-  info: {
-    displayName: 'carousel';
-    icon: 'stack';
-    description: '';
-  };
-  attributes: {
-    image: Attribute.Media & Attribute.Required;
-    url: Attribute.String;
-    text: Attribute.String;
-  };
-}
-
 export interface InteractiveSlide extends Schema.Component {
   collectionName: 'components_interactive_slides';
   info: {
@@ -159,7 +145,6 @@ export interface StaticWysiwyg extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'interactive.carousel': InteractiveCarousel;
       'interactive.slide': InteractiveSlide;
       'interactive.slider': InteractiveSlider;
       'static.button': StaticButton;
