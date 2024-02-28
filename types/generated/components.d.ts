@@ -83,6 +83,19 @@ export interface StaticFeaturedContent extends Schema.Component {
   };
 }
 
+export interface StaticFooterLinks extends Schema.Component {
+  collectionName: 'components_static_footer_links';
+  info: {
+    displayName: 'Footer Links';
+    icon: 'exit';
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    newPage: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface StaticImagesWithDecoration extends Schema.Component {
   collectionName: 'components_static_images_with_decorations';
   info: {
@@ -158,6 +171,7 @@ declare module '@strapi/types' {
       'static.content-preview-grid': StaticContentPreviewGrid;
       'static.content-preview-item': StaticContentPreviewItem;
       'static.featured-content': StaticFeaturedContent;
+      'static.footer-links': StaticFooterLinks;
       'static.images-with-decoration': StaticImagesWithDecoration;
       'static.seo': StaticSeo;
       'static.text-with-side-image': StaticTextWithSideImage;

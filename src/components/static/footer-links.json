@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_static_footer_links",
+  "info": {
+    "displayName": "Footer Links",
+    "icon": "exit"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "newPage": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
