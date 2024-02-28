@@ -18,6 +18,10 @@
     "text": {
       "type": "richtext",
       "required": true
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

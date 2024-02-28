@@ -2,16 +2,22 @@
   "collectionName": "components_static_images_with_decorations",
   "info": {
     "displayName": "Images With Decoration",
-    "icon": "picture"
+    "icon": "picture",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

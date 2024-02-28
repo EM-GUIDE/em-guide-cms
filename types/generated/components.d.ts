@@ -22,6 +22,7 @@ export interface InteractiveSlider extends Schema.Component {
   };
   attributes: {
     slides: Attribute.Component<'interactive.slide', true>;
+    hide: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -49,6 +50,7 @@ export interface StaticContentPreviewGrid extends Schema.Component {
       'static.content-preview-item',
       true
     >;
+    hide: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -77,6 +79,7 @@ export interface StaticFeaturedContent extends Schema.Component {
     title: Attribute.String;
     description: Attribute.RichText;
     button: Attribute.Component<'static.button'>;
+    hide: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -85,9 +88,11 @@ export interface StaticImagesWithDecoration extends Schema.Component {
   info: {
     displayName: 'Images With Decoration';
     icon: 'picture';
+    description: '';
   };
   attributes: {
     images: Attribute.Media;
+    hide: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -121,6 +126,7 @@ export interface StaticTextWithSideImage extends Schema.Component {
   attributes: {
     image: Attribute.Media & Attribute.Required;
     text: Attribute.RichText & Attribute.Required;
+    hide: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -139,6 +145,7 @@ export interface StaticWysiwyg extends Schema.Component {
           preset: 'toolbar';
         }
       >;
+    hide: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
