@@ -77,9 +77,15 @@ export interface StaticFeaturedContent extends Schema.Component {
   attributes: {
     image: Attribute.Media;
     title: Attribute.String;
-    description: Attribute.RichText;
     button: Attribute.Component<'static.button'>;
     hide: Attribute.Boolean & Attribute.DefaultTo<false>;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
   };
 }
 
