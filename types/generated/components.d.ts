@@ -31,10 +31,12 @@ export interface StaticButton extends Schema.Component {
   info: {
     displayName: 'button';
     icon: 'cursor';
+    description: '';
   };
   attributes: {
     label: Attribute.String & Attribute.Required;
     url: Attribute.String & Attribute.Required;
+    newPage: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
