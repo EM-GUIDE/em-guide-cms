@@ -1,6 +1,6 @@
 # EM GUIDE Website (CMS)
 
-This repository contains the Content Management System (CMS) backend code of the EM GUIDE website, developed using [Strapi](https://strapi.io/). 
+This repository contains the Content Management System (CMS) backend code of the EM GUIDE website, developed using [Strapi](https://strapi.io/). The website development has been accomplished in the context of the EM GUIDE project, learn more about it at [emgui.de](https://emgui.de).
 
 The goal was to create a website that loads quickly and is lightweight but allows flexible content editing.
 
