@@ -1,10 +1,14 @@
-# EM GUIDE Website CMS
+# EM GUIDE Website (CMS)
 
-This repository contains the CMS code for the EM GUIDE website, developed using [Strapi](https://strapi.io/). The goal is to create a website that loads quickly and is lightweight but allows flexible content editing.
+This repository contains the Content Management System (CMS) backend code of the EM GUIDE website, developed using [Strapi](https://strapi.io/). 
+
+The goal was to create a website that loads quickly and is lightweight but allows flexible content editing.
+
+Please refer to the [EM GUIDE (frontend)](https://github.com/EM-GUIDE/em-guide-site) for the frontend code of the EM GUIDE website. 
 
 ## Architecture
 
-The site's frontend is built using the [Astro](https://github.com/EM-GUIDE/em-guide-site) static site generator, which can automatically trigger page builds via Strapi webhooks.
+The overall architecture of the website is displayed below. The site's frontend is built using the [Astro](https://astro.build/) static site generator.
 
 ![alt text](https://github.com/EM-GUIDE/.github/blob/main/profile/em_guide_site_architecture.png?raw=true)
 
