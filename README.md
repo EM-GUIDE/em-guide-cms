@@ -12,100 +12,58 @@ The overall architecture of the website is displayed below. The site's frontend 
 
 ![alt text](https://github.com/EM-GUIDE/.github/blob/main/profile/em_guide_site_architecture.png?raw=true)
 
-## ⚙️ Development
+## 🔨 Development notes
 
-### Develop
+Clone this repository to get the code of the EM GUIDE website CMS. 
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+Use the following command to start the EM GUIDE website CMS in development mode. 
 
-```
+``` bash
 yarn develop
 ```
 
-### Start
+Use the following command to start the EM GUIDE website CMS in production mode. 
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
+``` bash
 yarn start
 ```
 
-### Build
+Use the following command to (re)build if needed.
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
+``` bash
 yarn build
 ```
 
-Strapi also comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+## 🏛️ Deployment notes
 
-## 📚 Learn more
+The EM GUIDE website CMS can be deployed using a Docker Compose setup (including a database, web proxy, and the application). 
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing artciles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+Clone this repository to your deployment droplet. 
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+Use the following code to start the EM GUIDE website CMS on your production droplet.
 
-## ✨ Community
+  ` docker compose up`
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
-## ⚙️ Deployment
-
-### Making changes
-
-1. When making changes that should be reflected upon restarting the Strapi container, follow these steps:
+When making changes to the code, use the following commands to stop & rebuild the application.
 
    ` docker compose down`
 
-2. Restart the Docker Compose services with the updated configuration. Use the command:
+   ` docker compose build`
+
+**Important note**: never down or delete the database volume as it stores the state of your application (content, users, settings etc.).  
+
+## 🐛 Troubleshooting
+
+The following commands may help with troubleshooting your setup. 
+
+Use the `-d` option to read the logs of all Docker services.
 
    ` docker compose up -d`
 
- This command starts the services in detached mode, allowing you to continue using the terminal.
-
-### Troubleshooting
-
-If you encounter issues where changes are not visible after restarting the Strapi container, it may be necessary to rebuild the Strapi service without using the cache. Follow these steps:
-
-1. Stop the Docker Compose services if they are running, using:
-
-   `docker compose down`
-
-2. Rebuild the Strapi service without cache to ensure all changes are applied. Use the command:
+Rebuild the application without cache.
 
    `docker compose build strapi --no-cache`
 
-   This command forces Docker to rebuild the Strapi service from scratch, ignoring any cached layers.
-
-3. Restart the Docker Compose services to apply the changes:
-
-   `docker compose up -d`
-
-### Managing Docker System Resources
-
-If you encounter errors related to the build cache size or lack of space on the server, you can manage Docker system resources using the following commands:
-
-1. Check Docker system disk usage with:
+Check the disk usage of your Docker assets to make sure that your droplet's dick is not full, and delete unused assets as needed. 
 
    `docker system df`
-
-   This command provides an overview of Docker's disk usage, helping you identify if there's a need to clean up.
-
-2. Remove unused build cache with:
-
-   `docker builder prune`
-
-   This command cleans up the build cache, freeing up space if the build cache is taking up too much space.
-
-3. Remove unused images with:
-
-   `docker image prune`
-
-   This command removes unused images, helping to reclaim disk space.
