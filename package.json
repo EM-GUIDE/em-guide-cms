@@ -29,9 +29,6 @@
     "strapi-plugin-populate-deep": "^3.0.1",
     "styled-components": "5.3.3"
   },
-  "resolutions": {
-    "sharp": "^0.29.0"
-  },
   "author": {
     "name": "A Strapi developer"
   },
