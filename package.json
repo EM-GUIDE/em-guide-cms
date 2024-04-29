@@ -24,8 +24,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "5.3.4",
-    "sharp": "^0.33.3",
-    "strapi-blurhash": "^1.2.4",
+    "strapi-blurhash":  "^1.1.1",
     "strapi-plugin-generate-data": "^1.0.32",
     "strapi-plugin-populate-deep": "^3.0.1",
     "styled-components": "5.3.3"
