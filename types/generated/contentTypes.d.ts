@@ -1000,6 +1000,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     >;
     tags: Attribute.Relation<'api::post.post', 'manyToMany', 'api::tag.tag'>;
     seo: Attribute.Component<'static.seo'>;
+    useDefaultImageOverlay: Attribute.Boolean & Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1078,6 +1079,7 @@ export interface ApiPublicationPublication extends Schema.CollectionType {
       ]
     >;
     seo: Attribute.Component<'static.seo'>;
+    useDefaultImageOverlay: Attribute.Boolean & Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

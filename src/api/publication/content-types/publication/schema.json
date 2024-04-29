@@ -50,6 +50,10 @@
       "type": "component",
       "repeatable": false,
       "component": "static.seo"
+    },
+    "useDefaultImageOverlay": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
