@@ -24,6 +24,7 @@ module.exports = ({ env }) => ({
         medium: 750,
         small: 500,
       },
+      sizeLimit: 32 * 1024 * 1024
     },
   },
 })
