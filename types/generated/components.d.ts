@@ -10,6 +10,7 @@ export interface InteractiveSlide extends Schema.Component {
     image: Attribute.Media & Attribute.Required;
     text: Attribute.String;
     url: Attribute.String;
+    textMobileOverwrite: Attribute.String;
   };
 }
 
